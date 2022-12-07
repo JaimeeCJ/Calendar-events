@@ -30,17 +30,22 @@ namespace Calendar
         private string carregarDia(int dia)
         {
             string lido = "";
+            string diaconvert= Convert.ToString(dia);
             UserControldias ucdias = new UserControldias();
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
-            String sql = "SELECT * from tab_ps_calendar where date = ?";
+            String sql = "SELECT COUNT(id_evento)quantidade from tab_agenda_cadastro where data_inicio like ?";
             MySqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = sql;
-            cmd.Parameters.AddWithValue("date", dia + "/" + Form1.static_mes + "/" + Form1.static_ano);
+            if (dia <10)
+            {
+                diaconvert = "0" + dia;
+            }
+            cmd.Parameters.AddWithValue("data_inicio", Form1.static_ano + "-" + Form1.static_mes + "-" + diaconvert + "%");
             MySqlDataReader reader = cmd.ExecuteReader();
              if (reader.Read())
              {
-                lido = reader["evento"].ToString();
+                lido = reader["quantidade"].ToString();
              }
             
             reader.Dispose();
@@ -137,6 +142,11 @@ namespace Calendar
                 ucdias.dias(i, carregarDia(i));
                 daycontainer.Controls.Add(ucdias);
             }
+        }
+
+        private void novoEventoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnanterior_Click(object sender, EventArgs e)

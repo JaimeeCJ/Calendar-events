@@ -45,7 +45,7 @@
             // 
             // btnprox
             // 
-            this.btnprox.Location = new System.Drawing.Point(768, 534);
+            this.btnprox.Location = new System.Drawing.Point(775, 531);
             this.btnprox.Name = "btnprox";
             this.btnprox.Size = new System.Drawing.Size(75, 23);
             this.btnprox.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // btnanterior
             // 
-            this.btnanterior.Location = new System.Drawing.Point(648, 534);
+            this.btnanterior.Location = new System.Drawing.Point(669, 531);
             this.btnanterior.Name = "btnanterior";
             this.btnanterior.Size = new System.Drawing.Size(75, 23);
             this.btnanterior.TabIndex = 2;
@@ -131,7 +131,7 @@
             this.daycontainer.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.daycontainer.Location = new System.Drawing.Point(19, 135);
             this.daycontainer.Name = "daycontainer";
-            this.daycontainer.Size = new System.Drawing.Size(831, 405);
+            this.daycontainer.Size = new System.Drawing.Size(831, 401);
             this.daycontainer.TabIndex = 0;
             // 
             // lbmes
@@ -169,7 +169,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(850, 570);
+            this.ClientSize = new System.Drawing.Size(850, 566);
+            this.Controls.Add(this.btnanterior);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
@@ -179,7 +180,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnanterior);
             this.Controls.Add(this.btnprox);
             this.Controls.Add(this.daycontainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
