@@ -36,9 +36,10 @@
             this.txtHoraInicio = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoraFinal = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtResp = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -47,9 +48,9 @@
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(292, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.Size = new System.Drawing.Size(73, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Titulo saída";
+            this.label1.Text = "Destino";
             // 
             // txtData
             // 
@@ -92,7 +93,7 @@
             // txtHoraInicio
             // 
             this.txtHoraInicio.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.txtHoraInicio.Location = new System.Drawing.Point(16, 118);
+            this.txtHoraInicio.Location = new System.Drawing.Point(74, 118);
             this.txtHoraInicio.Mask = "90:00";
             this.txtHoraInicio.Name = "txtHoraInicio";
             this.txtHoraInicio.Size = new System.Drawing.Size(50, 27);
@@ -112,22 +113,12 @@
             // txtHoraFinal
             // 
             this.txtHoraFinal.Font = new System.Drawing.Font("Montserrat", 12F);
-            this.txtHoraFinal.Location = new System.Drawing.Point(134, 118);
+            this.txtHoraFinal.Location = new System.Drawing.Point(258, 118);
             this.txtHoraFinal.Mask = "00:00";
             this.txtHoraFinal.Name = "txtHoraFinal";
             this.txtHoraFinal.Size = new System.Drawing.Size(50, 27);
             this.txtHoraFinal.TabIndex = 10;
             this.txtHoraFinal.ValidatingType = typeof(System.DateTime);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(83, 121);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 22);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "até";
             // 
             // txtResp
             // 
@@ -147,14 +138,35 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Responsável";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 22);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Saída";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(169, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 22);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Retorno";
+            // 
             // EventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 306);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtResp);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtHoraFinal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtHoraInicio);
@@ -181,8 +193,9 @@
         private System.Windows.Forms.MaskedTextBox txtHoraInicio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox txtHoraFinal;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtResp;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
     }
 }

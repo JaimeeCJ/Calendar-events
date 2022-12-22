@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,9 +22,25 @@ namespace Calendar
         {
             InitializeComponent();
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
+            Hide();
+            bool done = false;
+            ThreadPool.QueueUserWorkItem((x) =>
+            {
+                using (var splashForm = new FormLoad())
+                {
+                    splashForm.Show();
+                    while (!done)
+                        Application.DoEvents();
+                    splashForm.Close();
+                }
+            });
+
+            Thread.Sleep(3000); // Emulate hardwork
+            done = true;
+            Show();
             displayDias();
            
         }
@@ -31,7 +48,6 @@ namespace Calendar
         {
             string lido = "";
             string diaconvert= Convert.ToString(dia);
-            UserControldias ucdias = new UserControldias();
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
             String sql = "SELECT COUNT(id_evento)quantidade from tab_agenda_cadastro where data_inicio like ?";
@@ -148,6 +164,8 @@ namespace Calendar
         {
 
         }
+
+       
 
         private void btnanterior_Click(object sender, EventArgs e)
         {
