@@ -24,52 +24,36 @@ namespace Calendar
         }
         
         private void Form1_Load(object sender, EventArgs e)
-        {
-            Hide();
-            bool done = false;
-            ThreadPool.QueueUserWorkItem((x) =>
-            {
-                using (var splashForm = new FormLoad())
-                {
-                    splashForm.Show();
-                    while (!done)
-                        Application.DoEvents();
-                    splashForm.Close();
-                }
-            });
-
-            Thread.Sleep(3000); // Emulate hardwork
-            done = true;
-            Show();
-            displayDias();
-           
+        {            
+            displayDias();           
         }
         private string carregarDia(int dia)
         {
-            string lido = "";
-            string diaconvert= Convert.ToString(dia);
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
-            String sql = "SELECT COUNT(id_evento)quantidade from tab_agenda_cadastro where data_inicio like ?";
-            MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = sql;
-            if (dia <10)
+            using (MySqlConnection conn = new MySqlConnection(connString))
             {
-                diaconvert = "0" + dia;
+                conn.Open();
+                StringBuilder sql = new StringBuilder();
+                sql.Append("SELECT COUNT(id_evento) as quantidade ");
+                sql.Append("FROM tab_agenda_cadastro ");
+                sql.Append("WHERE data_inicio LIKE @data_inicio");
+
+                using (MySqlCommand cmd = new MySqlCommand(sql.ToString(), conn))
+                {
+                    string diaConvert = dia.ToString().PadLeft(2, '0');
+                    string mesConvert = mes.ToString().PadLeft(2, '0');
+                    cmd.Parameters.AddWithValue("@data_inicio", $"{Form1.static_ano}-{mesConvert}-{diaConvert}%");
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader["quantidade"].ToString();
+                        }
+                    }
+                }
             }
-            cmd.Parameters.AddWithValue("data_inicio", Form1.static_ano + "-" + Form1.static_mes + "-" + diaconvert + "%");
-            MySqlDataReader reader = cmd.ExecuteReader();
-             if (reader.Read())
-             {
-                lido = reader["quantidade"].ToString();
-             }
-            
-            reader.Dispose();
-            cmd.Dispose();
-            conn.Close();
-            return lido;
-            
-            
+
+            return "";
         }
         private void displayDias()
         {
@@ -165,7 +149,21 @@ namespace Calendar
 
         }
 
-       
+        private void visualizarToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void visualizarToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormExibirEvento formExibirEvento = new FormExibirEvento("01");
+            formExibirEvento.Show();
+        }
 
         private void btnanterior_Click(object sender, EventArgs e)
         {

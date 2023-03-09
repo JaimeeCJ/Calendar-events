@@ -20,6 +20,7 @@ namespace Calendar
         private string _titulo;
         private string _data;
         private string _horario;
+        private string _horariofinal;
         private string _reponsavel;
 
 
@@ -47,6 +48,12 @@ namespace Calendar
         {
             get { return _horario; }
             set { _horario = value; lblhorario.Text = value; }
+        }
+        [Category("Custom props")]
+        public string HorarioFinal
+        {
+            get { return _horariofinal; }
+            set { _horariofinal = value; lblhorariof.Text = value; }
         }
 
         #endregion

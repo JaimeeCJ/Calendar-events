@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblhorariof = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbltitulo
@@ -163,10 +164,21 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "até";
             // 
+            // lblhorariof
+            // 
+            this.lblhorariof.AutoSize = true;
+            this.lblhorariof.Font = new System.Drawing.Font("Montserrat", 12F);
+            this.lblhorariof.Location = new System.Drawing.Point(366, 103);
+            this.lblhorariof.Name = "lblhorariof";
+            this.lblhorariof.Size = new System.Drawing.Size(43, 22);
+            this.lblhorariof.TabIndex = 12;
+            this.lblhorariof.Text = "text";
+            // 
             // listEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblhorariof);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblhorariof;
     }
 }

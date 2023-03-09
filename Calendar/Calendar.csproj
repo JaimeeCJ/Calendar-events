@@ -88,12 +88,6 @@
     <Compile Include="FormExibirEvento.Designer.cs">
       <DependentUpon>FormExibirEvento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLoad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLoad.Designer.cs">
-      <DependentUpon>FormLoad.cs</DependentUpon>
-    </Compile>
     <Compile Include="listEvents.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,9 +116,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormExibirEvento.resx">
       <DependentUpon>FormExibirEvento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLoad.resx">
-      <DependentUpon>FormLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="listEvents.resx">
       <DependentUpon>listEvents.cs</DependentUpon>
@@ -164,6 +155,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\jTBbCdolNB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendario %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_2023_02_14T13_55_57_924Z.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_2023_02_14T14_22_37_522Z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KPI-indicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KPI-indicator2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KPI-indicator3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eventos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eventos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eventos2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

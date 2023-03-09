@@ -17,6 +17,7 @@ namespace Calendar
         String connString = "server=localhost;user id=root;database=leather;sslmode=none; password=0000";
         public static string static_dias;
         public static string diaconvert;
+        public static string mesconvert;
         public static string diaconverttocontrol;
         public UserControldias()
         {
@@ -32,7 +33,9 @@ namespace Calendar
         public void dias(int numdia, string evento)
         {
             lbdia.Text = numdia + "";
-            lblAgenda.Text = "Eventos: "+evento;
+            lblAgenda.Text = "Agendados: "+evento;
+        
+            
         }
 
         
@@ -68,11 +71,15 @@ namespace Calendar
                 contextMenuStrip1.Show(Cursor.Position);
             }
             diaconvert = lbdia.Text;
-            if (Convert.ToInt16(lbdia.Text) < 9)
+            if (Convert.ToInt16(lbdia.Text) < 10)
             {
                 diaconvert = "0" + lbdia.Text;
             }
-            diaconverttocontrol = Form1.static_ano + "-" + Form1.static_mes + "-" + diaconvert + "%";
+            if (Form1.static_mes < 10)
+            {
+                mesconvert = "0" + Form1.static_mes;
+            }
+            diaconverttocontrol = Form1.static_ano + "-" + mesconvert + "-" + diaconvert + "%";
         }
 
         private void novoEventoToolStripMenuItem_Click(object sender, EventArgs e)

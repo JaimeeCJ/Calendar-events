@@ -59,6 +59,7 @@ namespace Calendar
                     listEvents2.Titulo = reader["titulo"].ToString(); ;
                     listEvents2.Data = reader["data_inicio"].ToString().Remove(10);
                     listEvents2.Horario = reader["data_inicio"].ToString().Remove(0,11);
+                    listEvents2.HorarioFinal = reader["data_final"].ToString().Remove(0,11);
                     listEvents2.Responsavel = reader["responsavel"].ToString();
                     if (flowLayoutPanel1.Controls.Count < 0)
                     {
@@ -77,6 +78,14 @@ namespace Calendar
             
             
 
+        }
+
+       
+
+        private void calendárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
         }
     }
 }
